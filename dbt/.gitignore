@@ -1,0 +1,9 @@
+data/raw_orders_new.json
+
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,12 @@
+# Large datasets
+data/raw_orders_new.json
+
+# dbt generated files
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# Python
+__pycache__/
+*.pyc
+.env
