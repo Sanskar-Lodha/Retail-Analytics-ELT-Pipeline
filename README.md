@@ -2,7 +2,7 @@
 
 > **An end-to-end Retail Analytics Platform built using Python, AWS S3, Snowflake, dbt, SQL, and Power BI.**
 
-This project demonstrates a complete modern analytics engineering workflow—from generating raw retail data (JSON) to building production-ready data models and delivering interactive business dashboards.
+This project demonstrates a complete modern analytics engineering workflow from generating raw retail data (JSON) to building production-ready data models and delivering interactive business dashboards.
 
 It showcases how raw transactional data (JSON) can be transformed into trusted, analytics-ready datasets using industry-standard ELT practices.
 
