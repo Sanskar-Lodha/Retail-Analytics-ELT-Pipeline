@@ -136,3 +136,96 @@ The reporting layer follows a **star schema** design, separating dimensions from
 The dimensional model enables fast aggregations, reusable metrics, and scalable reporting across Power BI dashboards.
 
 ---
+
+## 📈 Interactive Business Dashboards
+
+The Power BI report is organized into three interactive dashboard pages, each designed for a different business audience. Together, they provide executive-level KPIs, operational performance monitoring, and promotion effectiveness analysis.
+
+---
+
+### 📊 Dashboard 1 — Monthly Summary
+
+<p align="center">
+    <img src="assets/Monthly Summary.jpg" width="100%">
+</p>
+
+This dashboard provides a high-level overview of business performance through key KPIs and executive metrics.
+
+#### Key Insights
+
+- Revenue and Order KPIs
+- Month-over-Month Performance
+- Order Status Funnel
+- Gross-to-Net Revenue Bridge
+- Daily Order Heatmap
+- Interactive Month Filter
+
+#### Business Value
+
+This page enables executives to quickly monitor overall business health, identify operational bottlenecks, and track monthly performance trends.
+
+---
+
+### ⚙️ Dashboard 2 — Operational Insights
+
+<p align="center">
+    <img src="assets/Operational insights.jpg" width="100%">
+</p>
+
+This dashboard focuses on operational efficiency and fulfillment performance across different business dimensions.
+
+#### Key Insights
+
+- Fulfillment Reliability by Marketplace
+- Top Performing Product Categories
+- Revenue by Country
+- Gross Margin Across Brands
+- Interactive Drill-down Analysis
+
+#### Business Value
+
+Operations and category managers can identify high-performing marketplaces, profitable brands, and geographic opportunities while monitoring fulfillment quality.
+
+---
+
+
+### 🎯 Dashboard 3 — Promotion Performance
+
+<p align="center">
+    <img src="assets/promo code.jpg" width="100%">
+</p>
+
+This dashboard evaluates promotional campaigns by measuring revenue contribution, margins, cancellations, returns, and individual promo code performance.
+
+#### Key Insights
+
+- Revenue vs Gross Margin
+- Order Outcome by Promotion Usage
+- Top Revenue Generating Promo Codes
+- Promotion Performance Summary
+- Discount Impact Analysis
+
+#### Business Value
+
+Marketing teams can evaluate campaign effectiveness, identify high-performing promotion codes, and balance customer acquisition with profitability.
+
+---
+
+
+## 💡 Business Insights Delivered
+
+The project answers several real-world retail analytics questions, including:
+
+- Which marketplaces have the highest fulfillment success rate?
+- Which product categories generate the highest revenue?
+- Which brands contribute the strongest gross margins?
+- How do promotions influence revenue and profitability?
+- Which promotion codes generate the highest sales?
+- How does revenue change after discounts, returns, and cancellations?
+- Which countries contribute the most revenue?
+- How do order volumes fluctuate throughout the month?
+- What percentage of orders successfully reach delivery?
+
+These insights help business stakeholders make informed decisions across operations, marketing, finance, and executive leadership.
+
+---
