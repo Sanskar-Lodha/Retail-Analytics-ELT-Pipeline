@@ -1,0 +1,94 @@
+<svg width="1000" height="1040" viewBox="0 0 1000 1040" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Retail analytics end-to-end ELT pipeline architecture</title>
+<desc>Python script generates synthetic orders, uploaded to AWS S3, loaded into Snowflake raw layer, transformed through dbt staging and tier1 models, and visualized in a three-page Power BI report.</desc>
+
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="#5F5E5A"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1000" height="1040" fill="#FFFFFF"/>
+
+<text x="500" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">Retail analytics — end-to-end ELT pipeline</text>
+<text x="500" y="64" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#666660">Synthetic data generation &#8594; cloud storage &#8594; data warehouse &#8594; dbt transformations &#8594; Power BI reporting</text>
+
+<rect x="180" y="90" width="640" height="70" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.5"/>
+<text x="500" y="116" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#2C2C2A">Python script</text>
+<text x="500" y="138" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#444441">Generates 50,000 synthetic retail orders as JSON</text>
+
+<line x1="500" y1="160" x2="500" y2="194" stroke="#5F5E5A" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+<rect x="180" y="196" width="640" height="70" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/>
+<text x="500" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#633806">AWS S3</text>
+<text x="500" y="244" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#633806">Raw JSON landing zone (S3 bucket)</text>
+
+<line x1="500" y1="266" x2="500" y2="300" stroke="#5F5E5A" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+<rect x="180" y="302" width="640" height="70" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+<text x="500" y="328" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#0C447C">Snowflake</text>
+<text x="500" y="350" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#0C447C">RETAIL_ANALYTICS.RAW.RAW_ORDERS</text>
+
+<line x1="500" y1="372" x2="500" y2="406" stroke="#5F5E5A" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+<rect x="50" y="408" width="900" height="150" rx="16" fill="#F1EFE8" stroke="#888780" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="70" y="438" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#2C2C2A">dbt &#8212; staging layer</text>
+<text x="70" y="456" font-family="Consolas, monospace" font-size="12" fill="#5F5E5A">RETAIL_ANALYTICS.STAGE</text>
+
+<rect x="90" y="478" width="260" height="60" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+<text x="220" y="500" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#085041">orders_stg</text>
+<text x="220" y="520" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#085041">Order-level staging</text>
+
+<rect x="370" y="478" width="260" height="60" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+<text x="500" y="500" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#085041">order_items_stg</text>
+<text x="500" y="520" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#085041">Flattened line items</text>
+
+<rect x="650" y="478" width="260" height="60" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+<text x="780" y="500" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#085041">order_events_stg</text>
+<text x="780" y="520" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#085041">Flattened lifecycle events</text>
+
+<line x1="500" y1="558" x2="500" y2="592" stroke="#5F5E5A" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+<rect x="50" y="594" width="900" height="230" rx="16" fill="#F1EFE8" stroke="#888780" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="70" y="624" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#2C2C2A">dbt &#8212; tier1 layer</text>
+<text x="70" y="642" font-family="Consolas, monospace" font-size="12" fill="#5F5E5A">RETAIL_ANALYTICS.TIER1 (business-ready)</text>
+
+<rect x="90" y="664" width="260" height="58" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="220" y="686" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#3C3489">orders_tier1</text>
+<text x="220" y="705" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3C3489">Business-ready orders</text>
+
+<rect x="370" y="664" width="260" height="58" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="500" y="686" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#3C3489">order_items_tier1</text>
+<text x="500" y="705" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3C3489">Business-ready items</text>
+
+<rect x="650" y="664" width="260" height="58" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="780" y="686" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#3C3489">customer_dim</text>
+<text x="780" y="705" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3C3489">One row per customer</text>
+
+<rect x="230" y="738" width="260" height="58" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="360" y="760" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="600" fill="#3C3489">shop_dim</text>
+<text x="360" y="779" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3C3489">One row per shop</text>
+
+<rect x="510" y="738" width="260" height="58" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="640" y="760" text-anchor="middle" font-family="Consolas, monospace" font-size="13" font-weight="600" fill="#3C3489">order_stage_transition</text>
+<text x="640" y="779" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3C3489">Stage-to-stage flow pairs</text>
+
+<line x1="500" y1="824" x2="500" y2="858" stroke="#5F5E5A" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+<rect x="50" y="860" width="900" height="150" rx="16" fill="#F1EFE8" stroke="#888780" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="70" y="890" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#2C2C2A">Power BI &#8212; reporting layer</text>
+<text x="70" y="908" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#5F5E5A">3 report pages, refreshed monthly</text>
+
+<rect x="90" y="930" width="260" height="60" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+<text x="220" y="952" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#712B13">Monthly Summary</text>
+<text x="220" y="972" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#712B13">KPIs, trends &amp; funnel</text>
+
+<rect x="370" y="930" width="260" height="60" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+<text x="500" y="952" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#712B13">Operational Insights</text>
+<text x="500" y="972" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#712B13">Fulfillment &amp; reliability</text>
+
+<rect x="650" y="930" width="260" height="60" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+<text x="780" y="952" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#712B13">Promo Code Performance</text>
+<text x="780" y="972" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#712B13">Discount &amp; promo impact</text>
+
+</svg>
